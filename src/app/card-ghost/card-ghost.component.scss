@@ -1,0 +1,85 @@
+.mat-card{
+    padding: 12px;
+    margin: 2em auto;
+    max-width: 472px;
+    min-height: 150px;
+}
+
+@keyframes placeHolderShimmer{
+    0%{
+        background-position: -468px 0
+    }
+    100%{
+        background-position: 468px 0
+    }
+}
+
+@mixin background-animation {
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+}
+
+@mixin background-gradient {
+    background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+    background-size: 800px 104px;
+}
+
+.avatar-ghost{
+    @include background-animation();
+    @include background-gradient();
+}
+
+::ng-deep .card{
+    .mat-card-header-text{
+        display: none;
+    }
+}
+
+.mat-card-header{
+    .header-text{
+        width: 100%;
+    }
+    .header-title, .header-subtitle{
+        margin-top: 8px;
+        margin-left: 10px;
+        border-radius: 10px;
+        @include background-animation();
+        @include background-gradient();
+    }
+
+    .header-title{
+        width: 58%;
+        height: 8px;
+    }
+
+    .header-subtitle{
+        width: 30%;
+        height: 7px;
+        margin-bottom: 20px;
+    }
+}
+
+.mat-card-content{
+    .parrafo-90, .parrafo-80, .parrafo-70, .parrafo-60{
+        height: 7px;
+        margin-top: 7px;
+        border-radius: 10px;
+        @include background-animation();
+        @include background-gradient();
+    }
+    .parrafo-90{
+        width: 90%;
+    }
+    .parrafo-80{
+        width: 80%;
+    }
+    .parrafo-70{
+        width: 70%;
+    }
+    .parrafo-60{
+        width: 60%;
+    }
+}

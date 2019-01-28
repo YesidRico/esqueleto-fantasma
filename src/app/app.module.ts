@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
+import { CardGhostComponent } from './card-ghost/card-ghost.component';
 
 const MATERIAL_MODULES = [
   MatSidenavModule,
@@ -18,7 +19,8 @@ const MATERIAL_MODULES = [
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CardGhostComponent
   ],
   imports: [
     BrowserModule,

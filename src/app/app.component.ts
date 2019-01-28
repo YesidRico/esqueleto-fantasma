@@ -17,10 +17,11 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.ghosts = Array.from({ length: 4 });
+    this.loading = true;
     this.$posts = this._http.get<any[]>("https://jsonplaceholder.typicode.com/posts")
       .pipe(
         tap(() => {
-          this.loading = true
+          this.loading = false;
           this.ghosts = [];
         })
       )

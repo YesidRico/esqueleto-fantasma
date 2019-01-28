@@ -17,29 +17,8 @@
             </mat-card-content>
         </mat-card>
 
-
-        <div *ngIf="!loading">
-            <mat-card [ngClass]="{'animated fadeOut': !loading}" *ngFor="let g of ghosts">
-                <mat-card-content>
-                    <div class="animated-background">
-                        <div class="background-masker header-top"></div>
-                        <div class="background-masker header-left"></div>
-                        <div class="background-masker header-right"></div>
-                        <div class="background-masker header-bottom"></div>
-                        <div class="background-masker subheader-left"></div>
-                        <div class="background-masker subheader-right"></div>
-                        <div class="background-masker subheader-bottom"></div>
-                        <div class="background-masker content-top"></div>
-                        <div class="background-masker content-first-end"></div>
-                        <div class="background-masker content-second-line"></div>
-                        <div class="background-masker content-second-end"></div>
-                        <div class="background-masker content-third-line"></div>
-                        <div class="background-masker content-third-end"></div>
-                    </div>
-                </mat-card-content>
-            </mat-card>
-        </div>
-
+        <app-card-ghost [loading]="loading" *ngFor="let ghost of ghosts">
+        </app-card-ghost> 
 
     </mat-sidenav-content>
 </mat-sidenav-container>
